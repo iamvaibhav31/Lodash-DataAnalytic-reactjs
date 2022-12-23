@@ -19,6 +19,8 @@ const Table = () => {
                     switch (action.type) {
                               case 'SearchByAppname':
                                         return _.filter(appdata, item => item["name"] === action.Search)
+                              case 'Reset':
+                                        return appdata
                               default:
                                         throw appdata
                     }
@@ -29,8 +31,7 @@ const Table = () => {
                     switch (action.type) {
                               case 'SearchByAppname':
                                         return _.filter(appname, item => item["app_name"] === action.Search)
-                              case 'default':
-                                        return appname
+
                               default:
                                         throw appname
                     }
@@ -85,8 +86,8 @@ const Table = () => {
 
                                                                                                                                   <li className="p-2 flex justify-end">
                                                                                                                                             <button className="p-2   mx-2 font-mono text-red-700" onClick={() => {
-                                                                                                                                                      appnamedispatch({
-                                                                                                                                                                type: 'default'
+                                                                                                                                                      appdatadispatch({
+                                                                                                                                                                type: 'Reset'
 
                                                                                                                                                       })
                                                                                                                                                       Setnamefilter(false)

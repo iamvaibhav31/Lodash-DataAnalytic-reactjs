@@ -13,14 +13,7 @@ export const appSlice = createSlice({
           name: 'AppData',
           initialState,
           reducers: {
-                    // filterAppdatabysearch: (state, action) => {
-                    //           console.log(action.payload)
-                    //           state.filteredappdata = _.filter(state.appdata, item => item["name"] === action.payload)
-                    //           console.log(state.filteredappdata)
-                    // },
-                    // filterAppnamebysearch: (state, action) => {
-                    //           state.filteredappname = _.filter(state.appname, item => item["app_name"] === action.payload)
-                    // },
+
 
           },
           extraReducers(builder) {
@@ -48,8 +41,8 @@ export const appSlice = createSlice({
                                                   return {
                                                             ...item,
                                                             name: appname.app_name,
-                                                            fillrate: (item.requests / item.responses) * (100 / 100),
-                                                            ctr: (item.clicks / item.impressions) * (100 / 100)
+                                                            fillrate: (item.requests / item.responses) * 100,
+                                                            ctr: (item.clicks / item.impressions) * 100
                                                   };
                                         })
                                         // console.log(updateddata)
